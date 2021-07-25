@@ -13,55 +13,63 @@
 </head>
 <body>
 <div class="main">
-<!--    <div class="app">-->
-<!--        <div class="app__header">-->
-<!--            <img src="img/logo.png" alt="logo" class="app__logo">-->
-<!--        </div>-->
-<!--        <div class="app__body">-->
-<!--            <div class="app__btn">-->
-<!--                <i class="fa fa-play-circle-o" aria-hidden="true"></i>-->
-<!--                <div class="app__text">Начать</div>-->
-<!--            </div>-->
-<!--            <div class="app__btn">-->
-<!--                <i class="fa fa-trophy" aria-hidden="true"></i>-->
-<!--                <div class="app__text">Достижения</div>-->
-<!--            </div>-->
-<!--            <div class="app__btn">-->
-<!--                <i class="fa fa-user" aria-hidden="true"></i>-->
-<!--                <div class="app__text">Автор</div>-->
-<!--            </div>-->
-<!--            <div class="app__btn">-->
-<!--                <i class="fa fa-volume-up" aria-hidden="true"></i>-->
-<!--                <div class="app__text">Звук</div>-->
-<!--            </div>-->
-<!--        </div>-->
+    <div class="app" v-show="showMain">
+        <div class="app__header">
+            <img src="img/logo.png" alt="logo" class="app__logo">
+        </div>
+        <div class="app__body">
+            <div class="app__btn">
+                <i class="fa fa-play-circle-o" aria-hidden="true"></i>
+                <div class="app__text">Начать</div>
+            </div>
+            <div class="app__btn">
+                <i class="fa fa-trophy" aria-hidden="true"></i>
+                <div class="app__text">Достижения</div>
+            </div>
+            <div class="app__btn">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <div class="app__text">Автор</div>
+            </div>
+            <div class="app__btn">
+                <i class="fa fa-volume-up" aria-hidden="true"></i>
+                <div class="app__text">Звук</div>
+            </div>
+        </div>
 
-<!--    <div class="app achievements">-->
-<!--        <div class="app__body">-->
-<!--            <div class="app__body-inner">-->
-<!--                <h2 class="app__body-title">-->
-<!--                    <i class="fa fa-trophy" aria-hidden="true"></i>-->
-<!--                    Достижения-->
-<!--                </h2>-->
-<!--                <div class="app__body-top">-->
-<!--                    <div class="app__card">-->
-<!--                       <div class="app__card-text">Счет</div>-->
-<!--                        <div class="app__card-count">0</div>-->
-<!--                    </div>-->
-<!--                    <div class="app__card">-->
-<!--                        <div class="app__card-text">Открыто рас</div>-->
-<!--                        <div class="app__card-count">0</div>-->
-<!--                    </div>-->
-<!--                    <div class="app__card">-->
-<!--                        <div class="app__card-text">Всего игр</div>-->
-<!--                        <div class="app__card-count">0</div>-->
-<!--                    </div>-->
-<!--                    <div class="app__card">-->
-<!--                        <div class="app__card-text">Любимая раса</div>-->
-<!--                        <div class="app__card-count">0</div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="app__body-middle">-->
+    <div class="app achievements" v-show="showAchievements">
+        <div class="app__body">
+            <div class="app__body-inner">
+                <h2 class="app__body-title">
+                    <i class="fa fa-trophy" aria-hidden="true"></i>
+                    Достижения
+                </h2>
+                <div class="app__body-top">
+                    <div class="app__card">
+                       <div class="app__card-text">Счет</div>
+                        <div class="app__card-count">0</div>
+                    </div>
+                    <div class="app__card">
+                        <div class="app__card-text">Открыто рас</div>
+                        <div class="app__card-count">0</div>
+                    </div>
+                    <div class="app__card">
+                        <div class="app__card-text">Всего игр</div>
+                        <div class="app__card-count">0</div>
+                    </div>
+                    <div class="app__card">
+                        <div class="app__card-text">Любимая раса</div>
+                        <div class="app__card-count">0</div>
+                    </div>
+                </div>
+                <div class="app__body-middle">
+                    <div class="app__result">
+                        <div class="app__result-score">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <div class="app__result-count">0</div>
+                        </div>
+                        <div class="app__result-name">Название расы</div>
+                        <div class="app__result-amount">0</div>
+                    </div>
 <!--                    <div class="app__result">-->
 <!--                        <div class="app__result-score">-->
 <!--                            <i class="fa fa-star" aria-hidden="true"></i>-->
@@ -70,76 +78,69 @@
 <!--                        <div class="app__result-name">Название расы</div>-->
 <!--                        <div class="app__result-amount">0</div>-->
 <!--                    </div>-->
-<!--&lt;!&ndash;                    <div class="app__result">&ndash;&gt;-->
-<!--&lt;!&ndash;                        <div class="app__result-score">&ndash;&gt;-->
-<!--&lt;!&ndash;                            <i class="fa fa-star" aria-hidden="true"></i>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <div class="app__result-count">0</div>&ndash;&gt;-->
-<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                        <div class="app__result-name">Название расы</div>&ndash;&gt;-->
-<!--&lt;!&ndash;                        <div class="app__result-amount">0</div>&ndash;&gt;-->
-<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
-<!--                </div>-->
-<!--                <div class="app__body-bott">-->
-<!--                    <button class="app__btn btn__back btn__achievement">-->
-<!--                        <i class="fa fa-reply" aria-hidden="true"></i>-->
-<!--                    </button>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
+                </div>
+                <div class="app__body-bott">
+                    <button class="app__btn btn__back btn__achievement">
+                        <i class="fa fa-reply" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<!--    <div class="app">-->
-<!--        <div class="app__header">-->
-<!--            <div class="app__header-inner">-->
-<!--                <div class="app__count"># 1</div>-->
-<!--                <div class="app__text"> text of question Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab amet asperiores culpa earum eos error est fugit in labore minus necessitatibus quis reiciendis repellendus sunt suscipit tempore, tenetur totam voluptatibus!</div>-->
+    <div class="app" v-show="showQuestions">
+        <div class="app__header">
+            <div class="app__header-inner">
+                <div class="app__count"># 1</div>
+                <div class="app__text"> text of question Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab amet asperiores culpa earum eos error est fugit in labore minus necessitatibus quis reiciendis repellendus sunt suscipit tempore, tenetur totam voluptatibus!</div>
 
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="app__body">-->
-<!--            <button class="app__btn">-->
-<!--                <div class="app__btn-text">Ответ 1</div>-->
-<!--            </button>-->
-<!--            <button class="app__btn">-->
-<!--                <div class="app__btn-text">Ответ 2</div>-->
-<!--            </button>-->
-<!--            <button class="app__btn">-->
-<!--                <div class="app__btn-text">Ответ 3</div>-->
-<!--            </button>-->
-<!--            <button class="app__btn">-->
-<!--                <div class="app__btn-text">Ответ 4</div>-->
-<!--            </button>-->
-<!--        </div>-->
-<!--    </div>-->
+            </div>
+        </div>
+        <div class="app__body">
+            <button class="app__btn">
+                <div class="app__btn-text">Ответ 1</div>
+            </button>
+            <button class="app__btn">
+                <div class="app__btn-text">Ответ 2</div>
+            </button>
+            <button class="app__btn">
+                <div class="app__btn-text">Ответ 3</div>
+            </button>
+            <button class="app__btn">
+                <div class="app__btn-text">Ответ 4</div>
+            </button>
+        </div>
+    </div>
 
-<!--    <div class="app">-->
-<!--        <div class="app__body">-->
-<!--            <a href="#" target="_blank" class="app__btn">-->
-<!--                <i class="fa fa-instagram" aria-hidden="true"></i>-->
-<!--                <div class="app__btn-text">Instagram</div>-->
-<!--            </a>-->
-<!--            <a href="#" target="_blank" class="app__btn">-->
-<!--                <i class="fa fa-twitter" aria-hidden="true"></i>-->
-<!--                <div class="app__btn-text">Twitter</div>-->
-<!--            </a>-->
-<!--            <a href="#" target="_blank" class="app__btn">-->
-<!--                <i class="fa fa-facebook" aria-hidden="true"></i>-->
-<!--                <div class="app__btn-text">Facebook</div>-->
-<!--            </a>-->
-<!--            <a href="#" target="_blank" class="app__btn">-->
-<!--                <i class="fa fa-vk" aria-hidden="true"></i>-->
-<!--                <div class="app__btn-text">Vkontakte</div>-->
-<!--            </a>-->
-<!--            <a href="#" target="_blank" class="app__btn">-->
-<!--                <i class="fa fa-youtube-play" aria-hidden="true"></i>-->
-<!--                <div class="app__btn-text">Youtube</div>-->
-<!--            </a>-->
-<!--            <button class="app__btn btn__back">-->
-<!--                <i class="fa fa-reply" aria-hidden="true"></i>-->
-<!--            </button>-->
-<!--        </div>-->
+    <div class="app" v-show="showSocial">
+        <div class="app__body">
+            <a href="#" target="_blank" class="app__btn">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+                <div class="app__btn-text">Instagram</div>
+            </a>
+            <a href="#" target="_blank" class="app__btn">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+                <div class="app__btn-text">Twitter</div>
+            </a>
+            <a href="#" target="_blank" class="app__btn">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+                <div class="app__btn-text">Facebook</div>
+            </a>
+            <a href="#" target="_blank" class="app__btn">
+                <i class="fa fa-vk" aria-hidden="true"></i>
+                <div class="app__btn-text">Vkontakte</div>
+            </a>
+            <a href="#" target="_blank" class="app__btn">
+                <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                <div class="app__btn-text">Youtube</div>
+            </a>
+            <button class="app__btn btn__back">
+                <i class="fa fa-reply" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
 
-<div class="app results" data-race="terran">
+<div class="app results" data-race="terran" v-show="showResults">
     <div class="app__body">
         <div class="app__results-inner">
             <div class="results-title">Zerg</div>
@@ -165,5 +166,38 @@
     </div>
 <script src="js/vue.js"></script>
 <script src="js/const.js"></script>
+    <script>
+        let app = new Vue({
+            el: '.main',
+            data: {
+                showMain: true,
+                showSocial: false,
+                showAchievements: false,
+                showResults: false,
+                showQuestions: false,
+                number: 0,
+                score: {
+                    'zerg': 0,
+                    'primal': 0,
+                    'protoss': 0,
+                    'taldarim': 0,
+                    'terran': 0,
+                },
+                totalGame: localStorage.getItem('sc2TotalGame') ? JSON.parse(localStorage.getItem('sc2TotalGame')): {
+                    'zerg': 0,
+                    'primal': 0,
+                    'protoss': 0,
+                    'taldarim': 0,
+                    'terran': 0,
+                    'infested': 0,
+                    'hybrid': 0,
+                },
+                totalGames: localStorage.getItem('sc2TotalGames') ? localStorage.getItem('sc2TotalGames'): 0,
+                questions: questions,
+                results: results,
+                resultRace: 'infested'
+            }
+        })
+    </script>
 </body>
 </html>
