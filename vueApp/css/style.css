@@ -181,5 +181,85 @@ i.fa {
 .app__text {
     font-size: 18px;
 }
+.result .app__body {
+    justify-content: space-between;
+}
+.app__results-inner {
+    color: white;
+    padding: 20px;
+}
+.results-title {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
+.results__img {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.results__img img {
+    width: 250px;
+}
+.result__text-box {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 20px;
+}
+.result__text {
+    margin-bottom: 20px;
+}
+.app.result {
+    animation: none;
+    background-size: cover;
+    background-position: center center;
+}
+.app.results[data-race="zerg"] {
+    background-image: url("../img/zerg_bg.jpg");
+}
+.app.results[data-race="primel"] {
+    background-image: url("../img/primal_bg.jpg");
+}
+.app.results[data-race="protoss"] {
+    background-image: url("../img/protoss_bg.jpg");
+}
+.app.results[data-race="taldarim"] {
+    background-image: url("../img/taldarim_bg.jpg");
+    background-position: 40% 0%;
+}
+.app.results[data-race="terran"] {
+     background-image: url("../img/terran_bg.jpg");
+ }
+.app.results[data-race="infested"] {
+    background-image: url("../img/infested_bg.jpg");
+}
+.app.results[data-race="hybrid"] {
+    background-image: url("../img/hybrid_bg.jpg");
+    background-position: 45% 0%;
+}
 
 
+.btn__zerg {
+    background-color: #762877;
+}
+.btn__primal {
+    background-color: #56a725;
+}
+.btn__protoss {
+    background-color: #fce356;
+    color: black;
+}
+.btn__taldarim {
+    background-color: #9d0101;
+}
+.btn__tarran {
+    background-color: #da8618;
+}
+.btn__infested {
+    background-color: #f5b673;
+    color: #000;
+}
+.btn__hybrid {
+    background-color: #fc7654;
+}
