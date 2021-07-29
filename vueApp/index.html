@@ -80,7 +80,7 @@
                         </div>
                     </div>
                     <div class="app__body-bott">
-                        <button class="app__btn btn__back btn__achievement" >
+                        <button class="app__btn btn__back btn__achievement" v-on:click="goToMain" >
                             <i class="fa fa-reply" aria-hidden="true"></i>
                         </button>
                     </div>
@@ -91,22 +91,13 @@
         <div class="app" v-show="showQuestions">
             <div class="app__header">
                 <div class="app__header-inner">
-                    <div class="app__count"># 1</div>
-                    <div class="app__text"> text of question Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab amet asperiores culpa earum eos error est fugit in labore minus necessitatibus quis reiciendis repellendus sunt suscipit tempore, tenetur totam voluptatibus!</div>
+                    <div class="app__count"># {{ number+1 }}</div>
+                    <div class="app__text">{{ questions[number][0] }}</div>
                 </div>
             </div>
             <div class="app__body">
-                <button class="app__btn">
-                    <div class="app__btn-text">Ответ 1</div>
-                </button>
-                <button class="app__btn">
-                    <div class="app__btn-text">Ответ 2</div>
-                </button>
-                <button class="app__btn">
-                    <div class="app__btn-text">Ответ 3</div>
-                </button>
-                <button class="app__btn">
-                    <div class="app__btn-text">Ответ 4</div>
+                <button class="app__btn" v-for="(answer, i) in questions[number][1]" v-on:click="nextQuestions(questions[number][2])">
+                    <div class="app__btn-text">{{answer }}</div>
                 </button>
             </div>
         </div>
@@ -139,20 +130,20 @@
             </div>
         </div>
 
-        <div class="app results" data-race="terran" v-show="showResults">
+        <div class="app results" v-bind:data-race="resultRace" v-show="showResults">
             <div class="app__body">
                 <div class="app__results-inner">
-                    <div class="results-title">Zerg</div>
+                    <div class="results-title">{{results[resultRace].name}}</div>
                     <div class="results__img">
-                        <img src="img/zerg_logo.png">
+                        <img v-bind:src="'img/'+resultRace+'_logo.png'">
                     </div>
                     <div class="app__text-box">
-                        <p class="result__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, nisi placeat? Aut corporis delectus dolorum ex excepturi expedita hic magni minus molestias officia officiis pariatur possimus quod, quos, similique sunt?</p>
-                        <p class="result__quote">quote</p>
-                        <p class="result__quote">quote</p>
-                        <p class="result__author">author</p>
+                        <p class="result__text">{{results[resultRace].description}}</p>
+                        <p class="result__quote">{{results[resultRace].quote1}}</p>
+                        <p class="result__quote">{{results[resultRace].quote2}}</p>
+                        <p class="result__author">{{results[resultRace].author}}</p>
                     </div>
-                    <button class="app__btn btn__back">
+                    <button :class="'app__btn btn__back btn__'+resultRace" v-on:click="goToAchievements">
                 <i class="fa fa-reply" aria-hidden="true"></i>
             </button>
                 </div>
