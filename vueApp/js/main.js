@@ -77,7 +77,7 @@ let app = new Vue({
             this.resultRace = race
         },
         nextQuestions(answer) {
-            if (this.number == 24) {
+            if (this.number === 24) {
                 this.number = 0;
                 this.endGame();
             } else {
@@ -88,7 +88,6 @@ let app = new Vue({
         endGame() {
             this.totalGames++
             localStorage.setItem('sc2TotalGames', this.totalGames)
-            //zerg
             if (this.score.zerg > this.score.protoss && this.score.zerg > this.score.terran && this.score.primal < 8 &&
             Math.abs(this.score.protoss - this.score.zerg) > 3) {
                 this.goToResults('zerg')
@@ -115,5 +114,33 @@ let app = new Vue({
             }
             localStorage.setItem('sc2TotalGame', JSON.stringify(this.endGame()))
         }
-    },
+    }
+
 })
+
+let audio = new Audio('audio/soundtrack.mp3')
+let audio_btn = document.querySelector('.btn__sound')
+let audio_icon = document.querySelector('.btn__sound i')
+
+audio.muted = true;
+audio.autoplay = true;
+audio.volume = 0.2
+
+audio.addEventListener('loadedmetadata', function () {
+    audio.currentTime= 0 + Math.random() * (audio.duration + 1 - 0)
+})
+
+audio_btn.addEventListener('click', function () {
+    if (audio.muted) {
+        audio.muted = false;
+        audio_icon.classList.add('.fa-volume-up')
+        audio_icon.classList.remove('.fa-volume-off')
+    } else if (!audio.muted){
+        audio.muted = true;
+        audio_icon.classList.add('.fa-volume-off')
+        audio_icon.classList.remove('.fa-volume-up')
+    }
+})
+
+
+

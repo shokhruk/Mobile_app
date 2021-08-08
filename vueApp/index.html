@@ -31,7 +31,7 @@
                     <i class="fa fa-user" aria-hidden="true"></i>
                     <div class="app__text">Автор</div>
                 </button>
-                <button class="app__btn">
+                <button class="app__btn btn__sound">
                     <i class="fa fa-volume-up" aria-hidden="true"></i>
                     <div class="app__text">Звук</div>
                 </button>
@@ -54,7 +54,7 @@
                         </div>
                         <div class="app__card">
                             <div class="app__card-text">Всего игр</div>
-                            <div class="app__card-count">0</div>
+                            <div class="app__card-count">{{ totalGames }}</div>
                         </div>
                         <div class="app__card">
                             <div class="app__card-text">Любимая раса</div>
@@ -144,8 +144,8 @@
                         <p class="result__author">{{results[resultRace].author}}</p>
                     </div>
                     <button :class="'app__btn btn__back btn__'+resultRace" v-on:click="goToAchievements">
-                <i class="fa fa-reply" aria-hidden="true"></i>
-            </button>
+                        <i class="fa fa-reply" aria-hidden="true"></i>
+                    </button>
                 </div>
             </div>
         </div>
